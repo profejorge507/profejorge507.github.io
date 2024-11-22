@@ -1,0 +1,26 @@
+body {
+    background-color: #f4f6f9;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-body i {
+    margin-bottom: 15px;
+}
+
+.navbar {
+    background-color: #3498db !important;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-weight: bold;
+}
