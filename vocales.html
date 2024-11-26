@@ -1,196 +1,144 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Aprendiendo las Vocales</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconocimiento de Vocales</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
     <style>
-        body { 
-            background-color: #f9f9f9; 
-            font-family: 'Comic Sans MS', cursive;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
         }
-        .quiz-container {
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            padding: 30px;
-            max-width: 700px;
-            margin: auto;
+
+        .container {
+            max-width: 1200px;
+            padding: 20px;
         }
-        .character {
-            max-width: 150px;
-            margin-bottom: 15px;
+
+        h1 {
+            font-weight: 700;
+            color: #2c3e50;
         }
-        .btn-choice {
-            margin: 5px;
-            padding: 10px;
-            font-size: 16px;
+
+        #game-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 800px;
         }
-        #confetti {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
+
+        #image-container {
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        #image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn {
+            font-weight: 500;
+            padding: 10px 25px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        /* Diseño responsivo */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            #game-container {
+                padding: 1rem;
+            }
+
+            .btn {
+                padding: 8px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            #question-container {
+                font-size: 1.25rem;
+            }
+
+            #image-container {
+                max-width: 200px;
+            }
         }
     </style>
+
+    <link href="styles.css" rel="stylesheet">
 </head>
-     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="container">
-            <a class="navbar-brand text-white" href="index.html">Plataforma Educativa</a>
-           
-        </div>
-    </nav>
 <body>
-    <div class="container py-5">
-        <div class="quiz-container text-center">
-            <div id="character-area" class="mb-4">
-                <img id="character" src="https://via.placeholder.com/150x150" alt="Personaje" class="character">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 display-4 animate__animated animate__fadeIn">Reconocimiento de Vocales</h1>
+
+        <div id="game-container" class="text-center animate__animated animate__fadeIn">
+            <div id="image-container" class="mb-3"></div>
+            <div id="question-container" class="h2 mb-4"></div>
+            <div id="options-container" class="mt-3 row justify-content-center g-3"></div>
+            
+            <div class="progress mb-3">
+                <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
             </div>
-            <h2 id="title" class="mb-4">🌟 Aprende las Vocales 🌟</h2>
-            <div id="quiz">
-                <div id="question" class="alert alert-info mb-3"></div>
-                <div id="choices" class="d-flex flex-wrap justify-content-center"></div>
-                <div id="result" class="mt-3"></div>
-            </div>
+
+            <button id="next-btn" class="btn btn-primary mt-4 d-none">
+                <i class="bi bi-arrow-right-circle"></i> Siguiente
+            </button>
+        </div>
+
+        <div id="score-container" class="text-center d-none mt-5 animate__animated animate__fadeIn">
+            <h2 class="display-5">¡Actividad completada!</h2>
+            <h3 class="mt-3">Tu puntaje final es: <span id="score" class="text-success">0</span>/20</h3>
+            <button id="restart-btn" class="btn btn-success mt-3">
+                <i class="bi bi-arrow-clockwise"></i> Reintentar
+            </button>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="bi bi-house-door"></i> Volver al inicio
+            </a>
         </div>
     </div>
-    <canvas id="confetti"></canvas>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-        const characters = [
-            "https://via.placeholder.com/150x150?text=A",
-            "https://via.placeholder.com/150x150?text=E",
-            "https://via.placeholder.com/150x150?text=I",
-            "https://via.placeholder.com/150x150?text=O",
-            "https://via.placeholder.com/150x150?text=U"
-        ];
-
-        const questions = [
-            {
-                question: "¿Cuál es una vocal?",
-                choices: ["B", "E", "D"],
-                correct: 1,
-                feedback: "¡Muy bien! 'E' es una vocal."
-            },
-            {
-                question: "Selecciona la vocal:",
-                choices: ["C", "A", "G"],
-                correct: 1,
-                feedback: "¡Correcto! 'A' es una vocal."
-            },
-            {
-                question: "¿Cuál es una vocal?",
-                choices: ["O", "J", "H"],
-                correct: 0,
-                feedback: "¡Exacto! 'O' es una vocal."
-            },
-            {
-                question: "¿Cuál letra pertenece al grupo de las vocales?",
-                choices: ["F", "U", "M"],
-                correct: 1,
-                feedback: "¡Bien hecho! 'U' es una vocal."
-            },
-            {
-                question: "Identifica la vocal:",
-                choices: ["I", "R", "P"],
-                correct: 0,
-                feedback: "¡Perfecto! 'I' es una vocal."
-            }
-        ];
-
-        let currentQuestion = 0;
-        let score = 0;
-
-        function changeCharacter() {
-            const characterImg = document.getElementById('character');
-            characterImg.src = characters[Math.floor(Math.random() * characters.length)];
-        }
-
-        function loadQuestion() {
-            changeCharacter();
-            const questionEl = document.getElementById('question');
-            const choicesEl = document.getElementById('choices');
-            const currentQuizQuestion = questions[currentQuestion];
-
-            questionEl.textContent = currentQuizQuestion.question;
-            choicesEl.innerHTML = '';
-
-            currentQuizQuestion.choices.forEach((choice, index) => {
-                const button = document.createElement('button');
-                button.textContent = choice;
-                button.classList.add('btn', 'btn-outline-primary', 'btn-choice');
-                button.addEventListener('click', () => selectChoice(index));
-                choicesEl.appendChild(button);
-            });
-        }
-
-        function selectChoice(choiceIndex) {
-            const currentQuizQuestion = questions[currentQuestion];
-            const resultEl = document.getElementById('result');
-
-            if (choiceIndex === currentQuizQuestion.correct) {
-                score++;
-                resultEl.innerHTML = `
-                    <div class="alert alert-success">
-                        ¡Correcto! ${currentQuizQuestion.feedback}
-                    </div>
-                `;
-            } else {
-                resultEl.innerHTML = `
-                    <div class="alert alert-danger">
-                        Ups, no es correcto. Intenta de nuevo.
-                    </div>
-                `;
-            }
-
-            setTimeout(() => {
-                currentQuestion++;
-                if (currentQuestion < questions.length) {
-                    loadQuestion();
-                } else {
-                    showResults();
-                }
-            }, 1500);
-        }
-
-        function showResults() {
-            const quizEl = document.getElementById('quiz');
-            const resultEl = document.getElementById('result');
-            const passingScore = Math.ceil(questions.length * 0.7);
-
-            if (score >= passingScore) {
-                resultEl.innerHTML = `
-                    <div class="alert alert-success">
-                        🎉 ¡Felicidades! Aprobaste el quiz con ${score} de ${questions.length} puntos. 🌟
-                    </div>
-                `;
-                confetti({
-                    particleCount: 100,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            } else {
-                resultEl.innerHTML = `
-                    <div class="alert alert-danger">
-                        📚 No te desanimes. Obtuviste ${score} de ${questions.length} puntos. ¡Sigue practicando! 
-                    </div>
-                `;
-            }
-
-            quizEl.innerHTML += `
-                <button onclick="location.reload()" class="btn btn-primary mt-3">
-                    🔄 Reintentar Quiz
-                </button>
-            `;
-        }
-
-        loadQuestion();
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
