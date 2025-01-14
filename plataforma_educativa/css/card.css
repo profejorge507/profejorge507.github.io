@@ -1,0 +1,184 @@
+/* Card Base Styles */
+.subject-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    overflow: hidden;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos específicos para cada grado */
+/* 1° Grado - Azul */
+#grade1.active .subject-card {
+    border-top: 4px solid #0d6efd;
+}
+
+#grade1.active .icon-wrapper {
+    color: #0d6efd;
+}
+
+#grade1.active .theme-btn {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* 2° Grado - Verde */
+#grade2.active .subject-card {
+    border-top: 4px solid #198754;
+}
+
+#grade2.active .icon-wrapper {
+    color: #198754;
+}
+
+#grade2.active .theme-btn {
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+}
+
+/* 3° Grado - Morado */
+#grade3.active .subject-card {
+    border-top: 4px solid #6f42c1;
+}
+
+#grade3.active .icon-wrapper {
+    color: #6f42c1;
+}
+
+#grade3.active .theme-btn {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
+
+/* 4° Grado - Naranja */
+#grade4.active .subject-card {
+    border-top: 4px solid #fd7e14;
+}
+
+#grade4.active .icon-wrapper {
+    color: #fd7e14;
+}
+
+#grade4.active .theme-btn {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+    color: white;
+}
+
+/* 5° Grado - Rojo */
+#grade5.active .subject-card {
+    border-top: 4px solid #dc3545;
+}
+
+#grade5.active .icon-wrapper {
+    color: #dc3545;
+}
+
+#grade5.active .theme-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+/* 6° Grado - Cyan */
+#grade6.active .subject-card {
+    border-top: 4px solid #0dcaf0;
+}
+
+#grade6.active .icon-wrapper {
+    color: #0dcaf0;
+}
+
+#grade6.active .theme-btn {
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+    color: white;
+}
+
+/* Estilos comunes para los iconos */
+.icon-wrapper {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para los botones */
+.theme-btn {
+    transition: all 0.3s ease;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mantener las animaciones existentes */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-play-state: paused;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Estilos para 7° Grado */
+#septimo.active .subject-card {
+    border-top: 4px solid #0d6efd;
+}
+
+#septimo.active .icon-wrapper {
+    color: #0d6efd;
+}
+
+#septimo.active .theme-btn {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+/* Estilos para 8° Grado */
+#octavo.active .subject-card {
+    border-top: 4px solid #198754;
+}
+
+#octavo.active .icon-wrapper {
+    color: #198754;
+}
+
+#octavo.active .theme-btn {
+    background-color: #198754;
+    border-color: #198754;
+    color: white;
+}
+
+/* Estilos para 9° Grado */
+#noveno.active .subject-card {
+    border-top: 4px solid #6f42c1;
+}
+
+#noveno.active .icon-wrapper {
+    color: #6f42c1;
+}
+
+#noveno.active .theme-btn {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+    color: white;
+}
