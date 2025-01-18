@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plataforma Educativa</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link href="/css/theme.css" rel="stylesheet">
+        <link href="/css/typography.css" rel="stylesheet">
+        <link href="/css/tabs.css" rel="stylesheet">
+        <link href="/css/header.css" rel="stylesheet">
+        <link href="/css/card.css" rel="stylesheet">
+        <link href="/css/footer.css" rel="stylesheet">
+    </head>
+    <body class="theme-primaria">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark theme-navbar sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <i class="bi bi-book-half me-2"></i>Plataforma Educativa
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/primaria.html">Primaria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/premedia.html">Premedia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/media.html">Media</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="theme-hero text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 fade-in">
+                        <h1 class="display-4 fw-bold mb-3">Español - Trimestres</h1>
+                        <p class="lead mb-4">Explora los temas organizados por trimestres</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <section class="py-5">
+            <div class="container">
+                <ul class="nav nav-tabs justify-content-center" id="trimestres-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab-trimestre1" data-bs-toggle="tab" data-bs-target="#trimestre1" type="button" role="tab">Trimestre 1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-trimestre2" data-bs-toggle="tab" data-bs-target="#trimestre2" type="button" role="tab">Trimestre 2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-trimestre3" data-bs-toggle="tab" data-bs-target="#trimestre3" type="button" role="tab">Trimestre 3</button>
+                    </li>
+                </ul>
+                <div class="tab-content mt-4" id="trimestres-content">
+                    <!-- Trimestre 1 -->
+                    <div class="tab-pane fade show active" id="trimestre1" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Conciencia Fonológica</h5>
+                                        <ul>
+                                            <li><a href="/actividades_trimestrales/trimestre1/español/identificarsonidos.html">Identificar sonidos iniciales, medios y finales</a></li>
+                                            <li><a href="#">Separar palabras en sílabas</a></li>
+                                            <li><a href="#">Segmentar palabras en fonemas</a></li>
+                                            <li><a href="#">Unir fonemas y sílabas</a></li>
+                                            <li><a href="#">Omitir fonemas y sílabas</a></li>
+                                            <li><a href="#">Sustituir fonemas</a></li>
+                                            <li><a href="#">Identificar rimas</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Principio Alfabético</h5>
+                                        <ul>
+                                            <li><a href="#">Asociar el fonema con la letra</a></li>
+                                            <li><a href="#">Aprender el nombre, la forma y el sonido de cada letra</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trimestre 2 -->
+                    <div class="tab-pane fade" id="trimestre2" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Decodificación</h5>
+                                        <ul>
+                                            <li><a href="#">Leer palabras utilizando letras y sonidos</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Fluidez</h5>
+                                        <ul>
+                                            <li><a href="#">Leer con precisión, rapidez y expresividad</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trimestre 3 -->
+                    <div class="tab-pane fade" id="trimestre3" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Vocabulario</h5>
+                                        <ul>
+                                            <li><a href="#">Conocimiento de palabras y significados</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Comprensión del Lenguaje</h5>
+                                        <ul>
+                                            <li><a href="#">Entender lo que se lee y escucha</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start">
+                        <h5 class="mb-3">Plataforma Educativa</h5>
+                        <p class="mb-0">Comprometidos con la educación panameña</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0">&copy; 2024 Plataforma Educativa. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
